@@ -19,4 +19,8 @@ public class Temperatura {
 		return fahreinheit;
 	}
 	
+	
+	
+	
+	
 }
