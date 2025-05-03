@@ -46,7 +46,6 @@ public class TelaConversor {
 		buttonKelvin.setBounds(220, 120, 200, 40);
 		
 		labelResultado = new JLabel();
-		labelResultado.setText(null);
 		labelResultado.setBounds(150, 170, 400, 60);
 		
 		
@@ -56,6 +55,7 @@ public class TelaConversor {
 		tela.getContentPane().add(buttonKelvin);
 		tela.getContentPane().add(labelResultado);
 		
+		
 		buttonFahreinheit.addActionListener(new ActionListener() {
 			
 			@Override
@@ -63,19 +63,29 @@ public class TelaConversor {
 				
 				Temperatura temp = new Temperatura();
 				String celsius = textCelsius.getText();
-				double celiusdouble = Double.valueOf(celsius);
-				temp.setCelsius(celiusdouble);
-				temp.converterParaFahreinheit();
-				
-				
-				
+				double celsiusdouble = Double.valueOf(celsius);
+				temp.setCelsius(celsiusdouble);
+				labelResultado.setText(temp.converterParaFahreinheit() +" FAHREINHEIT");
+			}
+		});
+		
+		buttonKelvin.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Temperatura temp = new Temperatura();
+				String celsius = textCelsius.getText();
+				double celsiusdouble = Double.valueOf(celsius);
+				temp.setCelsius(celsiusdouble);
+				labelResultado.setText(temp.converterParaKelvin() +" KELVIN");
 				
 				
 			}
 		});
+				
+		
 		
 		
 		tela.setVisible(true);
 	}
-
 }
